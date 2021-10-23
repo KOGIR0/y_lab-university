@@ -1,15 +1,17 @@
 package lesson_2;
 
+import java.util.Timer;
+
 public class Cat extends Animal{
     private String name;
 
-    Cat(String name) {
+    public Cat(String name) {
         this.name = name;
     }
 
     @Override
     public void voice() {
-        if(!this.isEating && !this.isSleeping) {
+        if(!this.isSleeping) {
             System.out.println("Meow");
         }
     }
@@ -27,7 +29,8 @@ public class Cat extends Animal{
     @Override
     public void sleep() {
         if(this.isEating) {
-            System.out.println("Cat " + this.name + " stoped eating");
+            this.isEating = false;
+            System.out.println("Cat " + this.name + " stops eating");
         }
         System.out.println("Cat " + this.name + " is sleeping...");
         this.isSleeping = true;
@@ -35,6 +38,9 @@ public class Cat extends Animal{
 
     @Override
     public void wakeUp() {
-        System.out.println("Cat " + this.name + " woke up");
+        if(this.isSleeping) {
+            System.out.println("Cat " + this.name + " woke up");
+            this.isSleeping = false;
+        }
     }
 }
