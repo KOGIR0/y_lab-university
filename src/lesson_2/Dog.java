@@ -1,35 +1,34 @@
 package lesson_2;
 
 public class Dog extends Animal{
-    private String name;
 
     @Override
     public void voice() {
-        if(!this.isSleeping && !this.isEating) {
+        if(!this.isSleeping) {
             System.out.println("Woof");
         }
     }
 
     @Override
     public void sleep() {
-        if(this.isEating) {
-            System.out.println("Dog " + this.name + " stops eating");
-        }
         if(!this.isSleeping) {
-            System.out.println("Dog " + this.name + " goes sleeping...");
+            System.out.println("Dog goes sleeping...");
+            this.isSleeping = true;
         }
     }
 
     @Override
     public void eat() {
-        System.out.println("Dog " + this.name + " starts eating...");
-        this.isEating = true;
+        if(this.isSleeping) {
+            this.wakeUp();
+        }
     }
 
     @Override
     public void wakeUp() {
         if(this.isSleeping) {
-            System.out.println("Dog " + this.name + " wakes up");
+            this.isSleeping = false;
+            System.out.println("Dog wakes up");
         }
     }
 }

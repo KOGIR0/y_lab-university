@@ -1,7 +1,6 @@
 package lesson_2;
 
 public abstract class Animal {
-    public Boolean isEating = false;
     public Boolean isSleeping = false;
 
     public abstract void voice();
