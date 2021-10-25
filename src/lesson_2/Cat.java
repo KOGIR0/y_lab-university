@@ -18,14 +18,12 @@ public class Cat extends Animal{
 
     @Override
     public void sleep() {
-        System.out.println("Cat is sleeping...");
         this.isSleeping = true;
     }
 
     @Override
     public void wakeUp() {
         if(this.isSleeping) {
-            System.out.println("Cat woke up");
             this.isSleeping = false;
         }
     }

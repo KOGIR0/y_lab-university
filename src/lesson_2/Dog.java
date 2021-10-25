@@ -12,7 +12,6 @@ public class Dog extends Animal{
     @Override
     public void sleep() {
         if(!this.isSleeping) {
-            System.out.println("Dog goes sleeping...");
             this.isSleeping = true;
         }
     }
@@ -28,7 +27,6 @@ public class Dog extends Animal{
     public void wakeUp() {
         if(this.isSleeping) {
             this.isSleeping = false;
-            System.out.println("Dog wakes up");
         }
     }
 }
